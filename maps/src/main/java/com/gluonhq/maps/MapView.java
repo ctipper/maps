@@ -30,20 +30,20 @@ package com.gluonhq.maps;
 import com.gluonhq.attach.util.Platform;
 import com.gluonhq.impl.maps.BaseMap;
 import com.gluonhq.impl.maps.TileImageView;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.function.Supplier;
 import javafx.animation.Animation.Status;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.geometry.Point2D;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Region;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.function.Supplier;
 
 /**
  *
@@ -135,8 +135,8 @@ public class MapView extends Region {
      * 
      * @return zoom the current zoom level
      */
-    public double getMapZoom() {
-        return baseMap.zoom().get();
+    public ReadOnlyDoubleProperty getMapZoom() {
+        return baseMap.zoom();
     }
 
     /**
