@@ -131,6 +131,15 @@ public class MapView extends Region {
     }
 
     /**
+     * Get the current zoom level of the map
+     * 
+     * @return zoom the current zoom level
+     */
+    public double getMapZoom() {
+        return baseMap.zoom().get();
+    }
+
+    /**
      * Request the map to set its zoom level to the specified value. The map
      * considers this request, but it does not guarantee the zoom level will be
      * set to the provided value
@@ -147,6 +156,17 @@ public class MapView extends Region {
      */
     public double getZoom() {
         return baseMap.getZoom();
+    }
+
+    /**
+     * Move map by increment
+     * 
+     * @param x x increment
+     * @param y y increment
+     */
+    public void moveMap(double x, double y) {
+        baseMap.moveX(x);
+        baseMap.moveY(y);
     }
 
     /**
